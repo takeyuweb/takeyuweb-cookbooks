@@ -28,6 +28,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  itamae
   itamae-plugin-recipe-rbenv
 
 BUNDLED WITH

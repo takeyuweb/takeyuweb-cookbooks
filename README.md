@@ -4,7 +4,6 @@
 
 ```
 sudo apt-get install ruby
-sudo gem install itamae
 sudo gem install bundler
 git clone https://github.com/takeyuweb/takeyuweb-cookbooks
 cd takeyuweb-cookbooks
