@@ -1,10 +1,32 @@
+# rbenv
 include_recipe 'rbenv::user'
+execute 'source ~/.bashrc' do
+  user 'takeyuweb'
+  subscribes :run, 'execute[install-rbenv-init]'
+  action :nothing
+end
+execute 'echo \'export PATH="$HOME/.rbenv/bin:$PATH"\' >> ~/.bashrc' do
+  user 'takeyuweb'
+  not_if 'cat ~/.bashrc  | grep "/.rbenv/bin:"'
+end
+execute 'install-rbenv-init' do
+  command 'echo \'eval "$(rbenv init -)"\' >> ~/.bashrc'
+  user 'takeyuweb'
+  not_if 'cat ~/.bashrc  | grep "rbenv init"'
+end
 
 execute 'apt-get update' do
   subscribes :run, 'execute[add-ubuntu-repository]', :immediately
   subscribes :run, 'execute[add-yarn-repository]', :immediately
   action :nothing
 end
+
+package 'build-essential'
+
+# Railsでよく使うgemの依存
+package 'libsqlite3-dev'
+package 'libmysqlclient-dev'
+package 'libpq-dev'
 
 # Docker CE
 package 'apt-transport-https'
