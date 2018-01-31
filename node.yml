@@ -1,0 +1,18 @@
+# node.yml
+rbenv:
+  user: takeyuweb
+  global:
+    2.5.0
+  versions:
+    - 2.5.0
+  # specify scheme to use in git clone, optional (default: git)
+  scheme: https
+  # Create ~/.rbenv/cache, optional (default: false)
+  # See: https://github.com/rbenv/ruby-build#package-download-caching
+  cache: true
+
+# Optional plugin. Specify :install or :revision to install rbenv-default-gems.
+rbenv-default-gems:
+  default-gems:
+    - bundler
+  install: true
