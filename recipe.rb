@@ -67,3 +67,6 @@ execute 'install-direnv-hook' do
   not_if 'cat ~/.bashrc  | grep "direnv hook bash"'
 end
 
+# axel
+# 分割ダウンロード対応のダウンローダ
+package 'axel'
