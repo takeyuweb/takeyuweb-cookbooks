@@ -22,6 +22,8 @@ package 'build-essential'
 package 'libsqlite3-dev'
 package 'libmysqlclient-dev'
 package 'libpq-dev'
+package 'libmagick++-dev' # rmagick
+package 'imagemagick'     # mini_magick
 
 # Docker CE
 package 'apt-transport-https'
