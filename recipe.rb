@@ -1,10 +1,5 @@
 # rbenv
 include_recipe 'rbenv::user'
-execute 'source ~/.bashrc' do
-  user 'takeyuweb'
-  subscribes :run, 'execute[install-rbenv-init]'
-  action :nothing
-end
 execute 'echo \'export PATH="$HOME/.rbenv/bin:$PATH"\' >> ~/.bashrc' do
   user 'takeyuweb'
   not_if 'cat ~/.bashrc  | grep "/.rbenv/bin:"'
@@ -59,3 +54,16 @@ execute 'add-yarn-repository' do
   command 'echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list'
 end
 package 'yarn'
+
+# direnv
+package 'direnv'
+execute 'echo \'export PATH="$HOME/.rbenv/bin:$PATH"\' >> ~/.bashrc' do
+  user 'takeyuweb'
+  not_if 'cat ~/.bashrc  | grep "/.rbenv/bin:"'
+end
+execute 'install-direnv-hook' do
+  command 'echo \'eval "$(direnv hook bash)"\' >> ~/.bashrc'
+  user 'takeyuweb'
+  not_if 'cat ~/.bashrc  | grep "direnv hook bash"'
+end
+

@@ -9,6 +9,7 @@ git clone https://github.com/takeyuweb/takeyuweb-cookbooks
 cd takeyuweb-cookbooks
 bundle install
 sudo bundle exec itamae local -y node.yml recipe.rb
+source ~/.bashrc
 ```
 
 ## Troubleshoot
