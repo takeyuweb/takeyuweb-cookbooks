@@ -72,3 +72,6 @@ end
 # axel
 # 分割ダウンロード対応のダウンローダ
 package 'axel'
+
+# Perl
+package 'perl'
