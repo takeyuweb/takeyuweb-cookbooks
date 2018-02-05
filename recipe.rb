@@ -75,3 +75,8 @@ package 'axel'
 
 # Perl
 package 'perl'
+
+# Heroku
+execute 'heroku' do
+  command 'snap install heroku --classic'
+end
