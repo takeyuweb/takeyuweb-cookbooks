@@ -75,6 +75,7 @@ package 'axel'
 
 # Perl
 package 'perl'
+package 'cpanminus'
 
 # Heroku
 execute 'heroku' do
