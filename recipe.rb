@@ -56,6 +56,10 @@ execute 'add-yarn-repository' do
   command 'echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list'
 end
 package 'yarn'
+# bower
+execute 'bower' do
+  command 'npm install -g bower'
+end
 
 # direnv
 package 'direnv'
