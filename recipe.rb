@@ -86,3 +86,6 @@ end
 execute 'circleci' do
   command 'curl -o /usr/local/bin/circleci https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci && chmod +x /usr/local/bin/circleci'
 end
+
+# AWS CLI
+package 'awscli'
