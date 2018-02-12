@@ -1,3 +1,6 @@
+# Snappy package manager
+package 'snapd'
+
 # rbenv
 include_recipe 'rbenv::user'
 execute 'echo \'export PATH="$HOME/.rbenv/bin:$PATH"\' >> ~/.bashrc' do
@@ -82,8 +85,8 @@ package 'perl'
 package 'cpanminus'
 
 # Heroku
-execute 'heroku' do
-  command 'snap install heroku --classic'
+snappy 'heroku' do
+  classic true
 end
 
 # CircleCI CLI
@@ -93,3 +96,14 @@ end
 
 # AWS CLI
 package 'awscli'
+
+# IDE
+snappy 'rubymine' do
+  classic true
+end
+snappy 'webstorm' do
+  classic true
+end
+snappy 'intellij-idea-ultimate' do
+  classic true
+end
