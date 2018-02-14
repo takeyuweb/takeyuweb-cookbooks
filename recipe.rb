@@ -112,3 +112,6 @@ end
 snappy 'slack' do
   classic true
 end
+snappy 'skype' do
+  classic true
+end
