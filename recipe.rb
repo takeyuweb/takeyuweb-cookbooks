@@ -107,3 +107,8 @@ end
 snappy 'intellij-idea-ultimate' do
   classic true
 end
+
+# Communication
+snappy 'slack' do
+  classic true
+end
