@@ -97,6 +97,12 @@ end
 # AWS CLI
 package 'awscli'
 
+# Auth0
+execute 'wt' do
+  command 'npm install -g wt-cli'
+end
+
+
 # IDE
 snappy 'rubymine' do
   classic true
