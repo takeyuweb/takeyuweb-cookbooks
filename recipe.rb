@@ -16,6 +16,7 @@ end
 execute 'apt-get update' do
   subscribes :run, 'execute[add-ubuntu-repository]', :immediately
   subscribes :run, 'execute[add-yarn-repository]', :immediately
+  subscribes :run, 'execute[add-wine-repository]', :immediately
   action :nothing
 end
 
@@ -120,4 +121,14 @@ snappy 'slack' do
 end
 snappy 'skype' do
   classic true
+end
+
+# Wine
+execute 'dpkg --add-architecture i386'
+execute 'curl -fsSL https://dl.winehq.org/wine-builds/Release.key | apt-key add -'
+execute 'add-wine-repository' do
+  command 'apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/'
+end
+package 'winehq-stable' do
+  options '--install-recommends'
 end
