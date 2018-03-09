@@ -77,9 +77,14 @@ execute 'install-direnv-hook' do
   not_if 'cat ~/.bashrc  | grep "direnv hook bash"'
 end
 
+
+# Utilities
 # axel
 # 分割ダウンロード対応のダウンローダ
 package 'axel'
+# Peak
+# スクリーンレコーダー。キャプチャしてアニメーションGIFにしたりする
+snappy 'peek'
 
 # Perl
 package 'perl'
