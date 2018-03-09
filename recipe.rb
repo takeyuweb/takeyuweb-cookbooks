@@ -85,6 +85,8 @@ package 'axel'
 # Peak
 # スクリーンレコーダー。キャプチャしてアニメーションGIFにしたりする
 snappy 'peek'
+snappy 'gnome-3-26-1604'
+execute 'snap connect peek:gnome-3-26-1604 gnome-3-26-1604'
 
 # Perl
 package 'perl'
